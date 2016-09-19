@@ -26,23 +26,6 @@
   </body>
 
   <script>
-  	var app = require('./lib/app');
-
-	app.on('rendered', function(rendered) {
-		$('#main').html(rendered);
-	});
-
-	function showContent(view) {
-		app.emit('view-selected', view);
-	};
-
-	$(function() {
-		showContent('home');
-
-		$('.nav').on('click', function(event) {
-			event.preventDefault();
-			showContent(this.id)
-		});
-	})
+  	require('./lib/view-renderer')('home');
   </script>
 </html>

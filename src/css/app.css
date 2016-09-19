@@ -76,7 +76,7 @@ body {
 	color: #52affb;
 }
 
-#stuff-nav {
+#docs-nav {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -94,28 +94,28 @@ body {
 	overflow-y: auto;
 }
 
-#stuff-nav ul {
+#docs-nav ul {
 	list-style: none;
 	padding: 0;
 }
 
-#stuff-nav li {
+#docs-nav li {
 	border-top: 1px solid #e5e5e5;
 	padding-top: 9px;
 	padding-bottom: 9px;
 	text-align: center;
 }
 
-#stuff-nav li:hover {
+#docs-nav li:hover {
 	background-color: #f5f5f5;
 }
 
-#stuff-nav a {
+#docs-nav a {
 	color: #666;
 	text-decoration: none;
 	font-size: 12px;
 }
 
-#stuff-nav a:hover {
+#docs-nav a:hover {
 	color: gold;
 }

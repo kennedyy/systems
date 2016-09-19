@@ -1,14 +1,30 @@
 # Distributed and parallel systems
 
 ## Requirements
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Bower](https://bower.io/)
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- [Bower](https://bower.io/)
 
 ## Getting started
-Clone the repository and install its dependencies.
-~~~shell
+
+Clone the repository.
+
+```shell
 git clone https://github.com/kennedyy/systems.git
-cd systems/src
-bower install && npm install
-~~~
+cd systems
+```
+
+Install its dependencies.
+
+```shell
+cd src
+bower install
+npm install
+```
+
+Now just run it with:
+
+```shell
+npm start
+```
