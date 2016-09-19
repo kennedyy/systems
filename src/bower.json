@@ -9,6 +9,6 @@
   "homepage": "https://github.com/kennedyy/systems",
   "private": "true",
   "dependencies": {
-    "font-awesome": "^4.6.3"
+    "font-awesome": "~4.6.3"
   }
 }
