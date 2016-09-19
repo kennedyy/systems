@@ -1,0 +1,14 @@
+{
+  "name": "systems",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "Walberto Ibarra <waldo.ibarra92@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kennedyy/systems",
+  "private": "true",
+  "dependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}

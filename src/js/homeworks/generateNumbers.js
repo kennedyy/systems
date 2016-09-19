@@ -12,7 +12,7 @@ module.exports = (function() {
 		numbers = generateNumbers(quantity);
 		writeFile(fileName, numbers);
 
-        //console.log('Wrote ' + numbers.length + ' integers to ' + fileName);
+        console.log('Wrote ' + numbers.length + ' integers to ' + fileName);
 	}
 
     // Returns an array of given lenth full of 6 digits integers.

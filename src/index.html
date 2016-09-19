@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Distributed and Parallel Systems</title>
+
+	<link rel="stylesheet" href="./css/app.css">
+	<link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
+	<script>var $ = jQuery = require('jquery')</script>
+  </head>
+  <body>
+	<nav id="side-nav">
+		<ul>
+			<li><a href="#" id="home" class="nav"><i class="fa fa-home"></i></a></li>
+			<li><a href="#" id="homeworks" class="nav"><i class="fa fa-bar-chart"></i></a></li>
+			<li><a href="#" id="projects" class="nav"><i class="fa fa-users"></i></a></li>
+			<li><a href="#" id="help" class="nav"><i class="fa fa-question-circle-o"></i></a></li>
+		</ul>
+	</nav>
+	<div id="top-bar">
+		<ul>
+			<li><a href="#"><i class="fa fa-user"></i></a></li>
+		</ul>
+	</div>
+	<main id="main"></main>
+  </body>
+
+  <script>
+  	var app = require('./lib/app');
+
+	app.on('rendered', function(rendered) {
+		$('#main').html(rendered);
+	});
+
+	function showContent(view) {
+		app.emit('view-selected', view);
+	};
+
+	$(function() {
+		showContent('home');
+
+		$('.nav').on('click', function(event) {
+			event.preventDefault();
+			showContent(this.id)
+		});
+	})
+  </script>
+</html>

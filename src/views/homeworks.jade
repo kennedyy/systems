@@ -1,0 +1,12 @@
+div(id = "stuff-nav")
+	h4(style="text-align: center") Homeworks
+	ul
+		li
+			a(href = "#" id = "hw1" class = "stuff-link") Homework 1
+		li
+			a(href = "#" id = "hw2" class = "stuff-link") Homework 2
+
+div(id = "content")
+
+script.
+	require('./lib/renderer')('hw1');
