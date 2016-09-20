@@ -13,9 +13,10 @@ function loadDocs() {
 
 	_.each(docsFiles, function(file) {
 		var filePath = path.join(docsDir, file);
-		var page = new MarkdownPage(filePath);
 
-		page.id = path.basename(file, '.md');
+		var page = new MarkdownPage(filePath);
+		page.name = path.basename(file, '.md');
+
 		result.push(page);
 	});
 
@@ -25,17 +26,17 @@ function loadDocs() {
 var App = function() {
 	this.docs = loadDocs();
 
-	this.on('view-selected', function(viewName) {
-		var view = new View(viewName);
-		this.emit('rendered', view.toHtml());
+	this.on('view-selected', function(name) {
+		var view = new View(name);
+		this.emit('view-rendered', view.toHtml());
 	});
 
-	this.on('doc-selected', function(id) {
+	this.on('doc-selected', function(name) {
 		var doc = _.find(this.docs, function(doc) {
-			return doc.id === id;
+			return doc.name === name;
 		});
 
-		this.emit('doc-rendered', doc);
+		this.emit('doc-rendered', doc.html);
 	});
 };
 

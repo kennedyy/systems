@@ -1,10 +1,10 @@
-div(id = "docs-nav")
-	h4(style="text-align: center") Projects
+div(id="docs-nav")
+	h4(class="center") Projects
 	ul
 		li
-			a(href = "#" id = "bachoco" class = "doc-link") Bachoco
+			a(href="#" data-doc="bachoco" class="doc-link") Bachoco
 
-div(id = "content")
+div(id="content")
 
 script.
 	require('./lib/doc-renderer')('bachoco');

@@ -119,3 +119,7 @@ body {
 #docs-nav a:hover {
 	color: gold;
 }
+
+.center {
+	text-align: center;
+}

@@ -1,20 +1,22 @@
 module.exports = function(view) {
 	var app = require('./app');
 
-	app.on('rendered', function(rendered) {
-		$('#main').html(rendered);
+	app.on('view-rendered', function(html) {
+		$('#main').html(html);
 	});
 
-	function showContent(view) {
-		app.emit('view-selected', view);
+	function showView(name) {
+		app.emit('view-selected', name);
 	};
 
 	$(function() {
-		showContent(view);
+		showView(view);
 
 		$('.nav').on('click', function(event) {
 			event.preventDefault();
-			showContent(this.id)
+
+			var name = $(this).data('view');
+			showView(name);
 		});
 	});
 };

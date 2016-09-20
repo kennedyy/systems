@@ -1,12 +1,12 @@
 module.exports = function(doc) {
 	var app = require('./app');
 
-	app.on('doc-rendered', function(doc) {
-		$('#content').html(doc.body);
+	app.on('doc-rendered', function(html) {
+		$('#content').html(html);
 	});
 
-	function showDoc(id) {
-		app.emit('doc-selected', id);
+	function showDoc(name) {
+		app.emit('doc-selected', name);
 	};
 
 	$(function() {
@@ -14,7 +14,9 @@ module.exports = function(doc) {
 
 		$('.doc-link').on('click', function(event) {
 			event.preventDefault();
-			showDoc(this.id);
+
+			var name = $(this).data('doc');
+			showDoc(name);
 		});
 	});
 };
