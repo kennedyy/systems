@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(doc) {
 	var app = require('./app');
 
@@ -12,8 +14,8 @@ module.exports = function(doc) {
 	$(function() {
 		showDoc(doc);
 
-		$('.doc-link').on('click', function(event) {
-			event.preventDefault();
+		$('.doc-link').on('click', function(e) {
+			e.preventDefault();
 
 			var name = $(this).data('doc');
 			showDoc(name);

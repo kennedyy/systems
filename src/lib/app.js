@@ -2,10 +2,11 @@ var Emitter = require('events').EventEmitter;
 var util = require('util');
 var path = require('path');
 var fs = require('fs');
-var _ = require('underscore');
 var View = require('./view');
 var MarkdownPage = require('./markdown_page');
-var docsDir = path.join(__dirname, '../../', 'docs');
+
+const docsDir = path.join(__dirname, '../../', 'docs');
+const templatesDir = path.join(__dirname, '../', 'templates');
 
 function loadDocs() {
 	var result = [];
@@ -13,9 +14,15 @@ function loadDocs() {
 
 	_.each(docsFiles, function(file) {
 		var filePath = path.join(docsDir, file);
+		var name = path.basename(file, '.md');
+		var template = path.join(templatesDir, `${name}.html`);
 
 		var page = new MarkdownPage(filePath);
-		page.name = path.basename(file, '.md');
+		page.name = name;
+
+		// Append the template to the html if it exists.
+		if (fs.existsSync(template))
+			page.html += fs.readFileSync(template, 'utf-8');
 
 		result.push(page);
 	});
